@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CreateTodo({ onTodoAdded }){
+function CreateTodo({ onTodoAdded, example, setExample }){
     const [title,setTitle]=useState("");
     const [description,setDescription]=useState("");
 
@@ -25,7 +25,8 @@ function CreateTodo({ onTodoAdded }){
             alert("Todo Added");
             setTitle("");
             setDescription("");
-            if (onTodoAdded) onTodoAdded(newTodo);   
+            setExample([...example, 1]);
+            // if (onTodoAdded) onTodoAdded(newTodo);   
         }catch(err){
             console.log(err);
         }

@@ -4,6 +4,7 @@ import './App.css'
 import { Todos } from './components/Todos';
 function App() {
   const [todos, setTodos] = useState([]);
+  const [example, setExample] = useState([]);
   async function fetchTodos() {
     try {
       const response = await fetch("http://localhost:3000/todos");
@@ -17,7 +18,8 @@ function App() {
 
   useEffect(() => {
     fetchTodos();
-  }, []);
+  }, [example]);
+
   function addTodoToUI(newTodo) {
     setTodos((prev) => [...prev, newTodo]);
   }
@@ -29,7 +31,8 @@ function App() {
   return (
     <>
       <div>
-        <CreateTodo onTodoAdded={addTodoToUI} />
+        <CreateTodo onTodoAdded={addTodoToUI} example={example} setExample={setExample
+        } />
         <Todos todos={todos} onTodoCompleted={removeTodoFromUI} />
       </div>
       
