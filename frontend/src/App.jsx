@@ -24,7 +24,7 @@ function App() {
     setTodos((prev) => [...prev, newTodo]);
   }
 
-  function removeTodoFromUI(id) {
+  function removeTodoFromUI(id) {   //This function removes the todo from the UI after marking it as complete
     setTodos((prev) => prev.filter((todo) => todo._id !== id));
   }
 

@@ -10,7 +10,7 @@ export function Todos({todos,onTodoCompleted }){
                     "Content-Type": "application/json"
                 }        
             })  
-            if (onTodoCompleted) onTodoCompleted(todo._id);
+            if (onTodoCompleted) onTodoCompleted(todo._id); // Call the callback to remove the todo from UI
         }catch(err){
             console.log("Some error");
         }
