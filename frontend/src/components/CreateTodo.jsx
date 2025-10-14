@@ -26,7 +26,7 @@ function CreateTodo({ onTodoAdded, example, setExample }){
             setTitle("");
             setDescription("");
             setExample([...example, 1]);
-            // if (onTodoAdded) onTodoAdded(newTodo);   
+            // setExample is just being used as a dummy state variable to force re-fetching the todos from backend.  
         }catch(err){
             console.log(err);
         }
